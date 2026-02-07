@@ -184,3 +184,25 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+/* 社交图标样式 */
+.icons-container {
+    display: flex;
+    gap: 20px;
+    font-size: 1.5rem; /* 图标大小 */
+    margin-top: 10px;
+}
+
+.icons-container a {
+    color: #636e72;
+    transition: all 0.3s ease;
+}
+
+/* 鼠标悬停时的品牌颜色 */
+.icons-container a:hover {
+    transform: translateY(-3px); /* 悬停时往上弹一下 */
+}
+
+.fa-github:hover { color: #24292e; }   /* GitHub 黑色 */
+.fa-weibo:hover { color: #e6162d; }    /* 微博 红色 */
+.fa-envelope:hover { color: #0984e3; } /* 邮件 蓝色 */
+.fa-weixin:hover { color: #07c160; }   /* 微信 绿色 */
