@@ -45,8 +45,12 @@
     </div>
 
     <footer>
-        <p>&copy; 2023 我的个人博客. All rights reserved.</p>
-    </footer>
-
+    <p>&copy; <span id="year"></span> 我的个人博客. All rights reserved.</p>
+</footer>
+<script>
+    // 自动获取当前年份并填入 id 为 year 的元素中
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
+
