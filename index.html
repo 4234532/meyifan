@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的个人空间 | 探索与记录</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 <body>
 
     <nav class="navbar">
@@ -32,26 +33,30 @@
     <div class="container main-layout">
         <main class="post-feed">
             <article class="post-card">
-                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="post-image">
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Laptop with code on screen representing technology notes">
+                </div>
                 <div class="post-content">
                     <span class="category">技术笔记</span>
                     <h3>写给新手的 GitHub Pages 指南</h3>
                     <p>搭建个人博客并不难，难的是如何坚持记录。今天我们聊聊如何通过简单的 HTML 开启你的创作之路...</p>
                     <div class="post-meta">
-                        <span>2026年2月7日</span>
+                        <time datetime="2026-02-07">2026年2月7日</time>
                         <a href="#" class="read-more">阅读更多 →</a>
                     </div>
                 </div>
             </article>
 
             <article class="post-card">
-                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="post-image">
+                    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80" alt="Morning coffee with sunlight representing daily life essays">
+                </div>
                 <div class="post-content">
                     <span class="category">生活随笔</span>
                     <h3>清晨的咖啡与代码</h3>
                     <p>有时候，最好的灵感并不在深夜的台灯下，而是在清晨第一缕阳光洒进房间的时候...</p>
                     <div class="post-meta">
-                        <span>2026年2月6日</span>
+                        <time datetime="2026-02-06">2026年2月6日</time>
                         <a href="#" class="read-more">阅读更多 →</a>
                     </div>
                 </div>
@@ -60,40 +65,38 @@
 
         <aside class="sidebar">
             <div class="widget about-me">
-                <img src="avatar.jpg" alt="头像" class="avatar">
+                <img src="avatar.jpg" alt="博主头像" class="avatar">
                 <h4>关于博主</h4>
                 <p>一个热爱探索世界的终身学习者，这里记录着我成长的脚步。</p>
             </div>
             
             <div class="widget categories">
                 <h4>栏目分类</h4>
-                <div class="widget social-links">
-    <h4>关注我</h4>
-    <div class="icons-container">
-        <a href="你的GitHub链接" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        
-        <a href="https://weibo.com/u/7901726188" target="_blank" title="微博"><i class="fab fa-weibo"></i></a>
-        
-        <a href="mailto:2407652400@qq.com" title="邮件"><i class="fas fa-envelope"></i></a>
-        
-    </div>
-</div>
                 <ul>
                     <li><a href="#">💻 技术分享 (12)</a></li>
                     <li><a href="#">🎨 随心所欲 (08)</a></li>
                     <li><a href="#">📚 读书笔记 (05)</a></li>
                 </ul>
             </div>
+
+            <div class="widget social-links">
+                <h4>关注我</h4>
+                <div class="icons-container">
+                    <a href="https://github.com/4234532/-.github.io" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://weibo.com/u/7901726188" target="_blank" title="微博"><i class="fab fa-weibo"></i></a>
+                    <a href="mailto:2407652400@qq.com" title="邮件"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
         </aside>
     </div>
 
     <footer>
-        <p>&copy; 2026 <span id="year"></span> Created by YourName. Powered by GitHub.</p>
+        <p>&copy; <span id="year"></span> Created by 孟逸凡. Powered by GitHub.</p>
     </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
-
-
-
-
