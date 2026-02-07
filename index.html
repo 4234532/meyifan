@@ -3,54 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的个人博客</title>
+    <title>我的个人空间 | 探索与记录</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
+    <nav class="navbar">
         <div class="container">
-            <h1>我的小世界</h1>
-            <nav>
-                <a href="#">首页</a>
-                <a href="#">关于我</a>
-                <a href="#">联系</a>
-            </nav>
+            <a href="#" class="logo">JOURNAL</a>
+            <ul class="nav-links">
+                <li><a href="#">首页</a></li>
+                <li><a href="#">文章分类</a></li>
+                <li><a href="#">摄影</a></li>
+                <li><a href="#">关于我</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h2>欢迎来到我的思想花园</h2>
+            <p>记录代码、生活，以及那些稍纵即逝的瞬间。</p>
         </div>
     </header>
 
-    <div class="container main-content">
-        <main>
-            <article class="card">
-                <h2>第一篇博客文章</h2>
-                <p class="date">2023年10月27日</p>
-                <p>这是我的第一篇博客文章。在这里，我将分享我的学习心得和生活趣事...</p>
-                <a href="#" class="btn">阅读全文</a>
+    <div class="container main-layout">
+        <main class="post-feed">
+            <article class="post-card">
+                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="post-content">
+                    <span class="category">技术笔记</span>
+                    <h3>写给新手的 GitHub Pages 指南</h3>
+                    <p>搭建个人博客并不难，难的是如何坚持记录。今天我们聊聊如何通过简单的 HTML 开启你的创作之路...</p>
+                    <div class="post-meta">
+                        <span>2026年2月7日</span>
+                        <a href="#" class="read-more">阅读更多 →</a>
+                    </div>
+                </div>
             </article>
 
-            <article class="card">
-                <h2>学习编程的乐趣</h2>
-                <p class="date">2023年10月28日</p>
-                <p>编程不仅是工作，更是一种创造。通过代码构建世界的感觉太棒了...</p>
-                <a href="#" class="btn">阅读全文</a>
+            <article class="post-card">
+                <div class="post-image" style="background-image: url('https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80');"></div>
+                <div class="post-content">
+                    <span class="category">生活随笔</span>
+                    <h3>清晨的咖啡与代码</h3>
+                    <p>有时候，最好的灵感并不在深夜的台灯下，而是在清晨第一缕阳光洒进房间的时候...</p>
+                    <div class="post-meta">
+                        <span>2026年2月6日</span>
+                        <a href="#" class="read-more">阅读更多 →</a>
+                    </div>
+                </div>
             </article>
         </main>
 
-        <aside>
-            <div class="card">
-                <h3>个人简介</h3>
-                <p>你好！我是博主。热爱技术，喜欢折腾。</p>
+        <aside class="sidebar">
+            <div class="widget about-me">
+                <img src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=200&q=80" alt="头像" class="avatar">
+                <h4>关于博主</h4>
+                <p>一个热爱探索世界的终身学习者，这里记录着我成长的脚步。</p>
+            </div>
+            
+            <div class="widget categories">
+                <h4>栏目分类</h4>
+                <ul>
+                    <li><a href="#">💻 技术分享 (12)</a></li>
+                    <li><a href="#">🎨 随心所欲 (08)</a></li>
+                    <li><a href="#">📚 读书笔记 (05)</a></li>
+                </ul>
             </div>
         </aside>
     </div>
 
     <footer>
-    <p>&copy; <span id="year"></span> 我的个人博客. All rights reserved.</p>
-</footer>
-<script>
-    // 自动获取当前年份并填入 id 为 year 的元素中
-    document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+        <p>&copy; 2026 <span id="year"></span> Created by YourName. Powered by GitHub.</p>
+    </footer>
+
 </body>
 </html>
-
