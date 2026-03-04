@@ -33,8 +33,6 @@
             background-color: #fff; 
             border-radius: 12px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            height: auto;
-            overflow: visible;
         ">
             <h3 style="margin-top: 0; margin-bottom: 25px; color: #2d3436; font-size: 1.3rem;">发表评论</h3>
 
@@ -44,44 +42,11 @@
                 data-page-id="{{ page.url }}" 
                 data-page-url="{{ page.url | absolute_url }}"
                 data-page-title="{{ page.title }}"
-                style="width: 100%; min-height: 200px; overflow: hidden;"
+                style="width: 100%; min-height: 380px;"
             ></div>
         </div>
 
         <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
-
-        <script>
-          // 方案 A：监听 Cusdis 内部发出的高度调整信号
-          window.addEventListener('message', e => {
-            if (e.data && e.data.type === 'resize') {
-              const iframe = document.querySelector('#cusdis_thread iframe');
-              if (iframe) {
-                iframe.style.height = e.data.data + 'px';
-                iframe.setAttribute('scrolling', 'no'); // 禁用滚动属性
-                iframe.style.overflow = 'hidden';      // 禁用溢出
-              }
-            }
-          });
-
-          // 方案 B：实时观察 iframe 的生成，并在第一时间“杀掉”滚动条
-          const observer = new MutationObserver(() => {
-            const iframe = document.querySelector('#cusdis_thread iframe');
-            if (iframe) {
-              iframe.setAttribute('scrolling', 'no');
-              iframe.style.overflow = 'hidden';
-              iframe.style.width = '100%';
-              // 初始高度同步尝试
-              if (iframe.contentWindow) {
-                 iframe.style.height = iframe.contentWindow.document.body.scrollHeight + 'px';
-              }
-            }
-          });
-
-          const target = document.getElementById('cusdis_thread');
-          if (target) {
-            observer.observe(target, { childList: true });
-          }
-        </script>
 
     </div>
 </body>
