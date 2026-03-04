@@ -25,13 +25,25 @@
             </div>
         </article>
 
-       <div id="cusdis_thread"
-  data-host="https://cusdis.com"
-  data-app-id="9ed3bc87-8c4b-40ae-afa6-907fb09cbf19"
-  data-page-id="{{ page.url }}" 
-  data-page-url="{{ page.url | absolute_url }}"
-  data-page-title="{{ page.title }}"
-></div>
+       <div id="cusdis_container" style="
+    margin-top: 50px; 
+    margin-bottom: 60px; 
+    padding: 30px; 
+    background-color: #fff; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+">
+    <h3 style="margin-top: 0; margin-bottom: 25px; color: #2d3436; font-size: 1.3rem;">发表评论</h3>
+
+    <div id="cusdis_thread"
+        data-host="https://cusdis.com"
+        data-app-id="9ed3bc87-8c4b-40ae-afa6-907fb09cbf19"
+        data-page-id="{{ page.url }}" 
+        data-page-url="{{ page.url | absolute_url }}"
+        data-page-title="{{ page.title }}"
+    ></div>
+</div>
+
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
     </div>
