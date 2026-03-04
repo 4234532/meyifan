@@ -8,11 +8,13 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter', 'Noto Serif SC', sans-serif;
     line-height: 1.6;
     margin: 0;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    /* 重点：换成一个优雅的渐变色背景 */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-attachment: fixed; /* 背景固定，滚动时更高级 */
+    color: #2d3436;
 }
 
 .container {
@@ -23,12 +25,15 @@ body {
 
 /* 导航栏 */
 .navbar {
-    background: #fff;
-    padding: 20px 0;
-    border-bottom: 1px solid #eee;
+    background: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 15px 0;
 }
 
 .navbar .container {
@@ -97,12 +102,15 @@ body {
 
 /* 文章卡片 */
 .post-card {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.45) !important; /* 半透明 */
+    backdrop-filter: blur(15px);                      /* 磨砂模糊 */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);       /* 玻璃边框 */
+    border-radius: 16px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
     margin-bottom: 30px;
-    transition: transform 0.3s;
+    overflow: hidden;
+    transition: transform 0.3s ease;
 }
 
 .post-card:hover {
@@ -155,11 +163,14 @@ body {
 
 /* 侧边栏 */
 .widget {
-    background: #fff;
-    padding: 25px;
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.45) !important; /* 同样的半透明 */
+    backdrop-filter: blur(15px);                      /* 同样的模糊 */
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 25px;                                    /* 保留原来的间距 */
+    border-radius: 16px;
     margin-bottom: 30px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
 }
 
 .avatar {
@@ -251,4 +262,5 @@ footer {
         gap: 10px;
     }
 }
+
 
