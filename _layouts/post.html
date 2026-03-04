@@ -25,12 +25,12 @@
             </div>
         </article>
 
-        <div id="cusdis_thread"
+       <div id="cusdis_thread"
   data-host="https://cusdis.com"
   data-app-id="9ed3bc87-8c4b-40ae-afa6-907fb09cbf19"
-  data-page-id="{{ PAGE_ID }}"
-  data-page-url="{{ PAGE_URL }}"
-  data-page-title="{{ PAGE_TITLE }}"
+  data-page-id="{{ page.url }}" 
+  data-page-url="{{ page.url | absolute_url }}"
+  data-page-title="{{ page.title }}"
 ></div>
 <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
