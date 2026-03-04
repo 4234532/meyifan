@@ -48,6 +48,27 @@
 
         <script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
 
+        <script>
+          window.addEventListener('message', function(e) {
+            try {
+              // 尝试解析 Cusdis 发送的 JSON 数据
+              const msg = JSON.parse(e.data);
+              
+              // 确认是 Cusdis 发出的高度调整请求
+              if (msg.from === 'cusdis' && msg.event === 'resize') {
+                const iframe = document.querySelector('#cusdis_thread iframe');
+                if (iframe) {
+                  // 将获取到的真实高度再 +30px 缓冲，强制写入并设为最高优先级（important）
+                  const newHeight = msg.data + 30;
+                  iframe.style.setProperty('height', newHeight + 'px', 'important');
+                }
+              }
+            } catch (err) {
+              // 忽略页面上其他无关的 message 信号
+            }
+          });
+        </script>
+
     </div>
 </body>
 </html>
