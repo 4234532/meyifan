@@ -2,8 +2,30 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>{{ page.title }} | YIFAN</title> 
     <link rel="stylesheet" href="{{ '/style.css' | relative_url }}"> 
+    
+    <style>
+        /* 移动端专属样式优化 */
+        @media (max-width: 768px) {
+            .widget {
+                padding: 20px !important; /* 手机端缩小内边距，给文字更多空间 */
+                margin-top: 20px !important;
+            }
+            .post-body {
+                font-size: 16px !important; /* 强制手机端正文字号，看得更清楚 */
+                line-height: 1.6;
+            }
+            h1 {
+                font-size: 1.5rem !important; /* 缩小手机端标题字号 */
+            }
+            #cusdis_wrapper {
+                padding: 15px !important; /* 缩小评论区边距 */
+                margin-top: 30px !important;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
@@ -51,24 +73,17 @@
         <script>
           window.addEventListener('message', function(e) {
             try {
-              // 尝试解析 Cusdis 发送的 JSON 数据
               const msg = JSON.parse(e.data);
-              
-              // 确认是 Cusdis 发出的高度调整请求
               if (msg.from === 'cusdis' && msg.event === 'resize') {
                 const iframe = document.querySelector('#cusdis_thread iframe');
                 if (iframe) {
-                  // 将获取到的真实高度再 +30px 缓冲，强制写入并设为最高优先级（important）
                   const newHeight = msg.data + 30;
                   iframe.style.setProperty('height', newHeight + 'px', 'important');
                 }
               }
-            } catch (err) {
-              // 忽略页面上其他无关的 message 信号
-            }
+            } catch (err) {}
           });
         </script>
-
     </div>
 </body>
 </html>
