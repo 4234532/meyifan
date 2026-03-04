@@ -31,50 +31,26 @@
     </header>
 
     <div class="container main-layout">
-        <main class="post-feed">
-            {% for post in site.posts %}
-<article class="post-card">
-    <div class="post-content">
-        <span class="category">{{ post.category }}</span>
-        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
-        <p>{{ post.excerpt | strip_html | truncate: 100 }}</p>
-        <div class="post-meta">
-            <span>{{ post.date | date: "%Y年%m月" }}</span>
-            <a href="{{ post.url | relative_url }}" class="read-more">阅读全文 →</a>
+       <main class="post-feed">
+    {% for post in site.posts %}
+    <article class="post-card">
+        <div class="post-image" style="background-image: url('{{ post.image | default: "https://images.unsplash.com/photo-1490750967868-88aa4486c946" }}'); height: 200px; background-size: cover;"></div>
+        
+        <div class="post-content" style="padding: 20px;">
+            <span class="category" style="color: #0984e3; font-size: 0.8rem; font-weight: bold;">{{ post.category | default: "随笔" }}</span>
+            <h3 style="margin: 10px 0;">
+                <a href="{{ post.url | relative_url }}" style="text-decoration: none; color: #2d3436;">{{ post.title }}</a>
+            </h3>
+            <p style="color: #636e72; font-size: 0.9rem;">{{ post.excerpt | strip_html | truncate: 80 }}</p>
+            
+            <div class="post-meta" style="margin-top: 15px; font-size: 0.8rem; color: #b2bec3; display: flex; justify-content: space-between;">
+                <span>{{ post.date | date: "%Y-%m-%d" }}</span>
+                <a href="{{ post.url | relative_url }}" style="color: #2d3436; font-weight: bold; text-decoration: none;">阅读全文 →</a>
+            </div>
         </div>
-    </div>
-</article>
-{% endfor %}
-            <article class="post-card">
-                <div class="post-image">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80" alt="Laptop with code on screen representing technology notes">
-                </div>
-                <div class="post-content">
-                    <span class="category">笔记</span>
-                    <h3>写给新手的 GitHub Pages 指南</h3>
-                    <p>搭建个人博客并不难，难的是如何坚持记录。今天我们聊聊如何通过简单的 HTML 开启你的创作之路...</p>
-                    <div class="post-meta">
-                        <time datetime="2026-02-07">2026年2月7日</time>
-                        <a href="#" class="read-more">阅读更多 →</a>
-                    </div>
-                </div>
-            </article>
-
-            <article class="post-card">
-                <div class="post-image">
-                    <img src="https://images.unsplash.com/photo-1517842645767-c639042777db?auto=format&fit=crop&w=800&q=80" alt="Morning coffee with sunlight representing daily life essays">
-                </div>
-                <div class="post-content">
-                    <span class="category">生活随笔</span>
-                    <h3>清晨的咖啡与代码</h3>
-                    <p>有时候，最好的灵感并不在深夜的台灯下，而是在清晨第一缕阳光洒进房间的时候...</p>
-                    <div class="post-meta">
-                        <time datetime="2026-02-06">2026年2月6日</time>
-                        <a href="#" class="read-more">阅读更多 →</a>
-                    </div>
-                </div>
-            </article>
-        </main>
+    </article>
+    {% endfor %}
+</main>
 
         <aside class="sidebar">
             <div class="widget about-me">
@@ -113,6 +89,7 @@
 
 </body>
 </html>
+
 
 
 
